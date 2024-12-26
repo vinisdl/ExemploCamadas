@@ -1,0 +1,13 @@
+@Presentation.ExamplosCurso_HostAddress = http://localhost:5144
+
+GET {{Presentation.ExamplosCurso_HostAddress}}/api/pedidos/
+Accept: application/json
+
+###
+
+
+
+GET {{Presentation.ExamplosCurso_HostAddress}}/api/pedidos/todos
+Accept: application/json
+
+###
