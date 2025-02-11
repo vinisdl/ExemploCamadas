@@ -1,11 +1,11 @@
 # ExemploCamadas
 
-Este é um projeto de exemplo que demonstra a implementação de uma arquitetura em camadas, separando responsabilidades entre apresentação, lógica de negócio e acesso a dados. Este projeto serve como uma base para o desenvolvimento de aplicações escaláveis e de fácil manutenção.
+Este é um projeto de exemplo em C# que demonstra a implementação de uma arquitetura em camadas, separando responsabilidades entre apresentação, lógica de negócio e acesso a dados. Este projeto serve como uma base para o desenvolvimento de aplicações escaláveis e de fácil manutenção.
 
 ## Pré-requisitos
 
-- Python 3.x
-- Virtualenv ou Poetry para gerenciamento de dependências (opcional)
+- .NET SDK 6.0 ou superior
+- Visual Studio, VS Code ou outra IDE de sua escolha
 
 ## Instalação
 
@@ -16,7 +16,8 @@ Este é um projeto de exemplo que demonstra a implementação de uma arquitetura
    cd ExemploCamadas
 
 3. Instale as dependências (se necessário):
-   pip install -r requirements.txt
+   dotnet restore
+   dotnet build
 
 ## Execução
 
@@ -24,11 +25,11 @@ A aplicação pode ser iniciada em uma das seguintes portas, com configurações
 
 - Para iniciar o servidor na porta 52880:
 
-  python app.py --host=0.0.0.0 --port=52880
+  dotnet run --urls http://0.0.0.0:52880
 
 - Para iniciar o servidor na porta 58489:
 
-  python app.py --host=0.0.0.0 --port=58489
+  dotnet run --urls http://0.0.0.0:58489
 
 Verifique o comando de execução conforme a implementação do servidor web presente no repositório.
 
