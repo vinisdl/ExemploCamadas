@@ -8,8 +8,8 @@ namespace ExemploCurso.Domain.Entidades
 {
     public class Produto : EntidadeBasica
     {        
-        public required string Titulo { get; set; }
-        public required string Descricao { get; set; }
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
         public decimal Preco { get; set; }
     }
 }
