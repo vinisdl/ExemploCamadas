@@ -20,5 +20,53 @@ namespace Exemplo.Curso.Testes
             var total = pedido.PedidoTotal();
             Assert.Equal(22m, total);
         }
+
+        [Fact]
+        public void PedidoTotal_ShouldReturnZero_ForEmptyItemPedidos()
+        {
+            var pedido = new Pedido
+            {
+                ItemPedidos = new List<ItemPedido>(),
+                Imposto = 1.5m
+            };
+            Assert.Equal(0m, pedido.PedidoTotal());
+        }
+
+        [Fact]
+        public void PedidoTotal_ShouldThrowException_ForNullItemPedidos()
+        {
+            var pedido = new Pedido
+            {
+                ItemPedidos = null,
+                Imposto = 1.0m
+            };
+
+            Assert.Throws<NullReferenceException>(() => pedido.PedidoTotal());
+        }
+
+        [Fact]
+        public void PedidoTotal_ShouldReturnZero_WhenImpostoIsZero()
+        {
+            var produto = new Produto { Titulo = "Test", Descricao = "Test", Preco = 100m };
+            var pedido = new Pedido
+            {
+                ItemPedidos = new List<ItemPedido> { new ItemPedido { Produto = produto, Quantidade = 5 } },
+                Imposto = 0m
+            };
+            Assert.Equal(0m, pedido.PedidoTotal());
+        }
+
+        [Fact]
+        public void PedidoTotal_ShouldThrowException_ForNullProdutoInItemPedido()
+        {
+            var pedido = new Pedido
+            {
+                ItemPedidos = new List<ItemPedido> { new ItemPedido { Produto = null, Quantidade = 1 } },
+                Imposto = 1.0m
+            };
+
+            Assert.Throws<NullReferenceException>(() => pedido.PedidoTotal());
+        }
+
     }
 }

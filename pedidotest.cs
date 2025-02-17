@@ -79,14 +79,3 @@ namespace ExemploCurso.Tests
         }
     }
 }
-
-// Minimal stub for Produto in case it is not defined elsewhere in the repository.
-// Se já existir uma classe Produto, remova este trecho.
-
-namespace ExemploCurso.Domain.Entidades
-{
-    public class Produto
-    {
-        public decimal Preco { get; set; }
-    }
-}
