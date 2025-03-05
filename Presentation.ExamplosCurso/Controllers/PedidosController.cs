@@ -31,44 +31,10 @@ namespace Presentation.ExamplosCurso.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            decimal imposto = 0.20m;
-            var pedido = new Pedido()
-            {
-                Id = Guid.NewGuid(),
-                Imposto = imposto,
-                ItemPedidos = new List<ItemPedido>()
-                {
-
-                        new ItemPedido()
-                        {
-                            Id = Guid.NewGuid(),
-                            Produto = new Produto()
-                            {
-                                Id = Guid.NewGuid(),
-                                Titulo = "Produto 1",
-                                Descricao = "Descricao Produto 1",
-                                Preco = 10
-                            },
-                            Quantidade = 2
-                        },
-                        new ItemPedido()
-                        {
-                            Id = Guid.NewGuid(),
-                            Produto = new Produto()
-                            {
-                                Id = Guid.NewGuid(),
-                                Titulo = "Produto 2",
-                                Descricao= "Descricao Produto 2",
-                                Preco = 20
-                            },
-                            Quantidade = 3
-                        }
-                }
-            };
-
-            return Ok(pedido);
+            var pedidos = await pedidoService.ObterTodos();
+            return Ok(pedidos);
         }
     }
 }
